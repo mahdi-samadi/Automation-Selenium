@@ -1,3 +1,5 @@
 from selenium import webdriver
-print("test")
+
 driver = webdriver.Firefox()
+
+driver.get("http://google.com")
