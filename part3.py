@@ -32,3 +32,5 @@ driver.get("https://wikipedia.com")
 #7 css selector
 # el7 = driver.find_element('css selector', '.svg-search-icon').click()
 # el8 = driver.find_element('css selector', '#searchInput').click()
+# el8 = driver.find_element('css selector', 'body.jsl10n-visible:nth-child(2) main:nth-child(1) div.search-container:nth-child(3) form.pure-form fieldset:nth-child(1) > button.pure-button.pure-button-primary-progressive:nth-child(4)').click()
+# sleep(3)
