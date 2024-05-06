@@ -7,3 +7,13 @@ module.exports = defineConfig({
     },
   },
 });
+
+// const { defineConfig } = require("cypress");
+
+// module.exports = defineConfig({
+//   e2e: {
+//     baseUrl: "http://localhost:1234",
+//     // سایر تنظیمات را اینجا اضافه کنید
+//   },
+//   // میتوانید تنظیمات جهانی را نیز اینجا اضافه کنید
+// });
