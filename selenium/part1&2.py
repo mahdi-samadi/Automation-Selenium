@@ -1,28 +1,24 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
 from time import sleep
 
-driver = webdriver.Firefox()
-driver.get('https://google.com')
 
-# driver.find_element('id', 'APjFqb').send_keys('wikipedia').click()
-# sleep(3)
-# window_title = driver.title
-# print(window_title)
-# sleep(1)
-# driver.get('https://wikipedia.com')
-# sleep(1)
-# driver.back()
-# sleep(1)
-# driver.switch_to.new_window('window')
-# sleep(2)
-# driver.switch_to.new_window('tab')
-# driver.get('https://yahoo.com')
-# yahoo_window = driver.current_window_handle
+base_url = "https://play1.automationcamp.ir"
+service = Service(executable_path=ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
 
-# all_handle = driver.window_handles
-# driver.switch_to.window(all_handle[0])
-# sleep(1)
+driver.get(f"{base_url}/forms.html")
+driver.find_element('id','check_python').click()
+check1 = driver.find_element('id', 'check_validate').text
+assert check1 == "PYTHON"
+text2 = "hello mahdi"
+driver.find_element('id', 'notes').send_keys(text2)
+check2 = driver.find_element('id','area_notes_validate').text
+assert check2 == text2
+sleep(10)
 
-window_size = driver.get_window_size()
-print(window_size)
-driver.quit()
+
+
+ 
